@@ -1,7 +1,8 @@
 import random
 
 words = [
-    "python", "programa", "variable", "funcion","bucle", "cadena", "entero", "lista"
+    "python", "programa", "variable", "funcion",
+    "bucle", "cadena", "entero", "lista"
 ]
 
 word = random.choice(words)
