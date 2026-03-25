@@ -1,20 +1,33 @@
 import random
+categorias = {
+    "lenguajes": ["python", "java", "c"],
+    "tipos de datos": ["entero", "cadena", "lista", "booleano","string",],
+    "control": ["bucle", "condicional"],
+    "conceptos": ["programa", "variable", "funcion"]
+}
 
-words = [
-    "python", "programa", "variable", "funcion",
-    "bucle", "cadena", "entero", "lista"
-]
-
-word = random.choice(words)
 guessed = []
 attempts = 6
+#selector de categorias
+while True:
+    print("categorias disponibles: ")
+    for categoria in categorias:
+        print()
+        print(f" ----{categoria}----")
+    seleccion=input (" selecciona una categoria: ").lower()
+    if seleccion in categorias:
+        break
+    else:
+      print("categoria no valida!")
+#asignacion de palabra
+word=random.choice(categorias[seleccion])
 puntaje = len(word)
+#inicio del juego 
 print("¡Bienvenido al Ahorcado!")
 print()
-
 while attempts > 0:
     progress = ""
-    
+  
     for letter in word:
         if letter in guessed:
             progress += letter + " "
